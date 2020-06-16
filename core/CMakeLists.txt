@@ -404,6 +404,13 @@ if (BUILD_READERS)
         src/textcodec/KRTextDecoder.cpp
     )
 endif()
+if (BUILD_OPENCV_SUPPORT)
+    find_package(OpenCV REQUIRED)
+    set (OPENCV_FILES ${OPENCV_FILES}
+	src/opencv/MatSource.h
+	src/opencv/MatSource.cpp
+    )
+endif()
 if (BUILD_WRITERS)
     set (TEXT_CODEC_FILES ${TEXT_CODEC_FILES}
         src/textcodec/Big5TextEncoder.h
@@ -426,6 +433,7 @@ source_group (Sources\\oned\\rss FILES ${ONED_RSS_FILES})
 source_group (Sources\\pdf417 FILES ${PDF417_FILES})
 source_group (Sources\\qrcode FILES ${QRCODE_FILES})
 source_group (Sources\\textcodec FILES ${TEXT_CODEC_FILES})
+source_group (Sources\\opencv FILES ${OPENCV_FILES})
 
 find_package (Threads)
 
@@ -439,6 +447,7 @@ add_library (ZXing
     ${PDF417_FILES}
     ${QRCODE_FILES}
     ${TEXT_CODEC_FILES}
+    ${OPENCV_FILES}
 )
 
 target_include_directories (ZXing

@@ -8,6 +8,7 @@ option (BUILD_EXAMPLES "Build the example barcode reader/writer applicatons" ON)
 option (BUILD_BLACKBOX_TESTS "Build the black box reader/writer tests" ON)
 option (BUILD_UNIT_TESTS "Build the unit tests (don't enable for production builds)" OFF)
 option (BUILD_PYTHON_MODULE "Build the python module" OFF)
+option (BUILD_OPENCV_SUPPORT "Build with OpenCV support" OFF)
 
 if (WIN32)
     option (BUILD_SHARED_LIBS "Build and link as shared library" OFF)
